@@ -5,10 +5,10 @@
     <title>Title</title>
 </head>
 <a>
-<a href="/add">Add a Job</a><br />
-<div th:each="job : ${jobs}">
-    <h4 th:inline="text">[[${job.title}]] @[[${job.employer}]]</h4>
-    <p th:text="${job.description}"></p>
-</div>
-</body>
+    <a href="/add">Add a Todo</a><br />
+    <div th:each="todo : ${todos}">
+        <h4 th:inline="text">[[${todo.task}]] @ [[${todo.duedate}]]</h4>
+        <p th:text="${todo.priority}"></p>
+    </div>
+    </body>
 </html>
