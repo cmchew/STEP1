@@ -10,20 +10,23 @@
 </head>
 <body>
 <form action="#"
-      th:action="@{/process}"
+      th:action="@{/add}"
       th:object="${message}"
-      method="post">
+      method="post"
+      enctype="multipart/form-data">
     Content:<textarea rows="3" th:field="*{content}" />
     <span th:if="${#fields.hasErrors('content')}"
-          th:errors="*{content}"></span><br />
+          th:errors="*{content}"></span><br /><br />
     Post Date :<input type="text" th:field="*{postdate}" />
     <span th:if="${#fields.hasErrors('postdate')}"
-          th:errors="*{postdate}"></span><br />
+          th:errors="*{postdate}"></span><br /><br />
     Sent by :<input type="text" th:field="*{sentby}" />
     <span th:if="${#fields.hasErrors('sentby')}"
           th:errors="*{sentby}"></span>
     <br />
-    <input type="submit" value="Submit"/>
+    <br />
+    <input type="file" name="file" />
+    <input type="submit" value="Submit" />
 </form>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
