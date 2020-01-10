@@ -14,27 +14,27 @@ import javax.validation.Valid;
 @Controller
 public class HomeController {
     @Autowired
-    TodoRepository todoRepository;
+    MessageRepository messageRepository;
 
     @RequestMapping("/")
-    public String listTodo(Model model){
-        model.addAttribute("todos", todoRepository.findAll());
+    public String listMessage(Model model){
+        model.addAttribute("messages", messageRepository.findAll());
         return "list";
     }
 
     @GetMapping("/add")
-    public String todoForm(Model model){
-        model.addAttribute("todo", new Todo());
-        return "todoform";
+    public String messageForm(Model model){
+        model.addAttribute("message", new Message());
+        return "messageform";
 
     }
 
     @PostMapping("/process")
-    public String processForm(@Valid Todo todo, BindingResult result) {
+    public String processForm(@Valid Message todo, BindingResult result) {
         if (result.hasErrors()) {
-            return "todoform";
+            return "messageform";
         }
-        todoRepository.save(todo);
+        messageRepository.save(todo);
         return "redirect:/";
     }
 }

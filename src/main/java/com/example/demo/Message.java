@@ -8,23 +8,23 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-public class Todo {
+public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @NotNull
-    @Size(min = 5, max = 30)
-    private String task;
+    @Size(min = 10)
+    private String content;
 
     @NotNull
     @Size(min = 3, max = 10)
-    private String duedate;
-
+    private String postdate;
 
     @NotNull
-    @Size(min = 10, max = 30)
-    private String priority;
+    @Size(min = 3, max = 10)
+    private String sentby;
+
 
     public long getId() {
         return id;
@@ -34,27 +34,27 @@ public class Todo {
         this.id = id;
     }
 
-    public String getTask() {
-        return task;
+    public String getContent() {
+        return content;
     }
 
-    public void setTask(String task) {
-        this.task = task;
+    public void setContent(String content) {
+        this.content = content;
     }
 
-    public String getDuedate() {
-        return duedate;
+    public String getPostdate() {
+        return postdate;
     }
 
-    public void setDuedate(String duedate) {
-        this.duedate = duedate;
+    public void setPostdate(String postdate) {
+        this.postdate = postdate;
     }
 
-    public String getPriority() {
-        return priority;
+    public String getSentby() {
+        return sentby;
     }
 
-    public void setPriority(String priority) {
-        this.priority = priority;
+    public void setSentby(String sentby) {
+        this.sentby = sentby;
     }
 }

@@ -5,10 +5,10 @@
     <title>Title</title>
 </head>
 <a>
-    <a href="/add">Add a Todo</a><br />
-    <div th:each="todo : ${todos}">
-        <h4 th:inline="text">[[${todo.task}]] @ [[${todo.duedate}]]</h4>
-        <p th:text="${todo.priority}"></p>
+    <a href="/add">Add a message</a><br />
+    <div th:each="message : ${messages}">
+        <h4 th:inline="text">[[${message.content}]] @ [[${message.postdate}]]</h4>
+        <p th:text="${message.sentby}"></p>
     </div>
     </body>
 </html>
